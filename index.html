@@ -71,6 +71,24 @@
       tap-highlight-color: transparent;
     }
 
+    /* Allow Selection & Native Copy ONLY for Email & Telegram Handle */
+    .copyable {
+      -webkit-user-select: text !important;
+      -moz-user-select: text !important;
+      -ms-user-select: text !important;
+      user-select: text !important;
+      -webkit-touch-callout: default !important;
+      cursor: text;
+      color: var(--text);
+      font-weight: 700;
+      padding: 2px 8px;
+      border-radius: 8px;
+      background: var(--pill-bg);
+      border: 1px solid var(--border-glow);
+      display: inline-block;
+      line-height: 1.5;
+    }
+
     a, button, img {
       outline: none;
       -webkit-user-drag: none;
@@ -508,44 +526,126 @@
     /* Contact CTA */
     .contact-box {
       display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: space-between;
-      gap: 14px;
+      flex-direction: column;
+      gap: 16px;
       margin-top: 14px;
-      padding: 16px 18px;
+      padding: 18px;
       border-radius: var(--radius-md);
       background: var(--surface-strong);
       border: 1px solid var(--border-glow);
+    }
+
+    .contact-details {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .contact-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 8px;
+      color: var(--text-muted);
+      font-size: 0.92rem;
+    }
+
+    .copy-mini-btn {
+      border: 1px solid var(--border);
+      background: var(--surface);
+      color: var(--text);
+      border-radius: 8px;
+      padding: 4px 8px;
+      font-family: inherit;
+      font-size: 0.78rem;
+      font-weight: 700;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      transition: transform 0.15s ease, border-color var(--transition);
+    }
+
+    .copy-mini-btn:hover {
+      border-color: var(--cyan);
+    }
+
+    .copy-mini-btn:active {
+      transform: scale(0.93);
+    }
+
+    .cta-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
     }
 
     .cta-btn {
       display: inline-flex;
       align-items: center;
       gap: 9px;
-      padding: 11px 22px;
+      padding: 11px 20px;
       border-radius: 999px;
       background: var(--gradient);
       color: #070B14;
       font-weight: 800;
-      font-size: 0.92rem;
+      font-size: 0.9rem;
       text-decoration: none;
-      box-shadow: 0 8px 24px rgba(0, 229, 195, 0.3);
+      box-shadow: 0 8px 24px rgba(0, 229, 195, 0.28);
       transition: transform 0.18s ease, box-shadow var(--transition);
     }
 
     .cta-btn:hover {
-      box-shadow: 0 12px 28px rgba(168, 85, 247, 0.38);
+      box-shadow: 0 12px 28px rgba(168, 85, 247, 0.36);
     }
 
     .cta-btn:active {
       transform: scale(0.95);
     }
 
+    .cta-btn-secondary {
+      background: var(--surface);
+      color: var(--text);
+      border: 1px solid var(--border-glow);
+      box-shadow: none;
+    }
+
+    .cta-btn-secondary:hover {
+      border-color: var(--purple);
+      box-shadow: 0 8px 20px rgba(168, 85, 247, 0.2);
+    }
+
     .cta-btn svg {
       width: 18px;
       height: 18px;
       flex-shrink: 0;
+    }
+
+    /* Copy Toast */
+    .copy-toast {
+      position: fixed;
+      bottom: 24px;
+      left: 50%;
+      transform: translateX(-50%) translateY(20px);
+      background: var(--surface-strong);
+      color: var(--text);
+      border: 1px solid var(--border-glow);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      padding: 10px 20px;
+      border-radius: 999px;
+      font-size: 0.88rem;
+      font-weight: 700;
+      box-shadow: var(--shadow);
+      opacity: 0;
+      pointer-events: none;
+      z-index: 100;
+      transition: opacity 0.25s ease, transform 0.25s ease;
+    }
+
+    .copy-toast.show {
+      opacity: 1;
+      transform: translateX(-50%) translateY(0);
     }
 
     /* Footer */
@@ -726,18 +826,36 @@
           <div class="section-num">6</div>
           <h2>تواصل معنا</h2>
         </div>
-        <p>إذا كان لديك أي استفسار بخصوص سياسة الخصوصية أو رغبت بطلب توضيح أو حذف أي بيانات تقنية مرتبطة باستخدامك، يسعدنا تواصلك معنا مباشرة عبر تيليجرام:</p>
+        <p>إذا كان لديك أي استفسار بخصوص سياسة الخصوصية أو رغبت بطلب توضيح أو حذف أي بيانات تقنية مرتبطة باستخدامك، يسعدنا تواصلك معنا عبر البريد الإلكتروني أو تيليجرام:</p>
         <div class="contact-box">
-          <div>
-            <strong>Hassan Studio 1</strong><br />
-            <span style="color: var(--text-muted); font-size: 0.9rem;">تيليجرام: <span dir="ltr">@Hassan_Official_1</span></span>
+          <div class="contact-details">
+            <strong>Hassan Studio 1</strong>
+            <div class="contact-row">
+              <span>البريد الإلكتروني:</span>
+              <span class="copyable" dir="ltr">Play98h@gmail.com</span>
+              <button type="button" class="copy-mini-btn" data-copy="Play98h@gmail.com" data-msg="تم نسخ البريد الإلكتروني">نسخ</button>
+            </div>
+            <div class="contact-row">
+              <span>تيليجرام:</span>
+              <span class="copyable" dir="ltr">@Hassan_Official_1</span>
+              <button type="button" class="copy-mini-btn" data-copy="@Hassan_Official_1" data-msg="تم نسخ معرّف تيليجرام">نسخ</button>
+            </div>
           </div>
-          <a class="cta-btn" href="https://t.me/Hassan_Official_1" target="_blank" rel="noopener noreferrer">
-            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-              <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/>
-            </svg>
-            تواصل عبر تيليجرام
-          </a>
+          <div class="cta-group">
+            <a class="cta-btn" href="mailto:Play98h@gmail.com">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect x="2" y="4" width="20" height="16" rx="3"/>
+                <path d="m22 7-10 6L2 7"/>
+              </svg>
+              راسلنا عبر البريد
+            </a>
+            <a class="cta-btn cta-btn-secondary" href="https://t.me/Hassan_Official_1" target="_blank" rel="noopener noreferrer">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/>
+              </svg>
+              تواصل عبر تيليجرام
+            </a>
+          </div>
         </div>
       </article>
     </div>
@@ -808,18 +926,36 @@
           <div class="section-num">6</div>
           <h2>Contact Us</h2>
         </div>
-        <p>If you have any questions about this Privacy Policy or wish to request information or deletion regarding anonymous technical records, please contact us directly on Telegram:</p>
+        <p>If you have any questions about this Privacy Policy or wish to request information or deletion regarding anonymous technical records, please contact us via Email or Telegram:</p>
         <div class="contact-box">
-          <div>
-            <strong>Hassan Studio 1</strong><br />
-            <span style="color: var(--text-muted); font-size: 0.9rem;">Telegram: @Hassan_Official_1</span>
+          <div class="contact-details">
+            <strong>Hassan Studio 1</strong>
+            <div class="contact-row">
+              <span>Email:</span>
+              <span class="copyable" dir="ltr">Play98h@gmail.com</span>
+              <button type="button" class="copy-mini-btn" data-copy="Play98h@gmail.com" data-msg="Email copied">Copy</button>
+            </div>
+            <div class="contact-row">
+              <span>Telegram:</span>
+              <span class="copyable" dir="ltr">@Hassan_Official_1</span>
+              <button type="button" class="copy-mini-btn" data-copy="@Hassan_Official_1" data-msg="Telegram username copied">Copy</button>
+            </div>
           </div>
-          <a class="cta-btn" href="https://t.me/Hassan_Official_1" target="_blank" rel="noopener noreferrer">
-            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-              <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/>
-            </svg>
-            Contact on Telegram
-          </a>
+          <div class="cta-group">
+            <a class="cta-btn" href="mailto:Play98h@gmail.com">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect x="2" y="4" width="20" height="16" rx="3"/>
+                <path d="m22 7-10 6L2 7"/>
+              </svg>
+              Email Support
+            </a>
+            <a class="cta-btn cta-btn-secondary" href="https://t.me/Hassan_Official_1" target="_blank" rel="noopener noreferrer">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/>
+              </svg>
+              Contact on Telegram
+            </a>
+          </div>
         </div>
       </article>
     </div>
@@ -830,11 +966,15 @@
     </footer>
   </main>
 
+  <div id="copyToast" class="copy-toast" role="status" aria-live="polite"></div>
+
   <script>
     const html = document.documentElement;
     const langToggle = document.getElementById('langToggle');
     const themeToggle = document.getElementById('themeToggle');
     const themeIcon = document.getElementById('themeIcon');
+    const copyToast = document.getElementById('copyToast');
+    let toastTimer = null;
 
     // Sync initial theme with device preference
     const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
@@ -856,9 +996,21 @@
       html.setAttribute('dir', isAr ? 'ltr' : 'rtl');
     });
 
-    // Native App Protections: Disable Context Menu, Selection, Drag & Zoom
-    document.addEventListener('contextmenu', (e) => e.preventDefault());
-    document.addEventListener('selectstart', (e) => e.preventDefault());
+    // Helper: check if target is inside a .copyable element
+    function isInsideCopyable(target) {
+      const el = target && target.nodeType === 3 ? target.parentElement : target;
+      return Boolean(el && el.closest && el.closest('.copyable'));
+    }
+
+    // Native App Protections: Block selection/menu everywhere EXCEPT .copyable, and block zoom everywhere
+    document.addEventListener('contextmenu', (e) => {
+      if (isInsideCopyable(e.target)) return;
+      e.preventDefault();
+    });
+    document.addEventListener('selectstart', (e) => {
+      if (isInsideCopyable(e.target)) return;
+      e.preventDefault();
+    });
     document.addEventListener('dragstart', (e) => e.preventDefault());
     document.addEventListener('gesturestart', (e) => e.preventDefault(), { passive: false });
     document.addEventListener('gesturechange', (e) => e.preventDefault(), { passive: false });
@@ -873,6 +1025,41 @@
         e.preventDefault();
       }
     });
+
+    // Quick Copy Buttons with Toast Feedback
+    function showToast(msg) {
+      copyToast.textContent = msg;
+      copyToast.classList.add('show');
+      clearTimeout(toastTimer);
+      toastTimer = setTimeout(() => copyToast.classList.remove('show'), 2000);
+    }
+
+    document.querySelectorAll('.copy-mini-btn').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const text = btn.getAttribute('data-copy');
+        const msg = btn.getAttribute('data-msg');
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(text).then(() => showToast(msg)).catch(() => fallbackCopy(text, msg));
+        } else {
+          fallbackCopy(text, msg);
+        }
+      });
+    });
+
+    function fallbackCopy(text, msg) {
+      const ta = document.createElement('textarea');
+      ta.value = text;
+      ta.style.position = 'fixed';
+      ta.style.opacity = '0';
+      document.body.appendChild(ta);
+      ta.focus();
+      ta.select();
+      try {
+        document.execCommand('copy');
+        showToast(msg);
+      } catch (_) {}
+      document.body.removeChild(ta);
+    }
 
     // 360-Degree Live Equalizer Ring (Matched to Lahn Music App About Screen)
     (function initWaveRing() {
@@ -892,7 +1079,6 @@
       const minLen = 6;
       const maxLen = 25;
 
-      // Color stops: Cyan (#00E5C3) -> Sky Blue (#38BDF8) -> Purple (#A855F7)
       function getWaveColor(t) {
         let r, g, b;
         if (t < 0.5) {
@@ -919,7 +1105,6 @@
         for (let i = 0; i < barCount; i++) {
           const angle = (i / barCount) * Math.PI * 2 - Math.PI / 2;
 
-          // Multi-harmonic crisp equalizer pulse matching the app
           const w1 = Math.sin(angle * 4 - t * 2.5) * 0.36;
           const w2 = Math.sin(angle * 7 + t * 3.4) * 0.30;
           const w3 = Math.cos(angle * 11 - t * 4.3) * 0.22;
@@ -928,7 +1113,6 @@
           const raw = Math.max(0, Math.min(1, (w1 + w2 + w3 + w4 + 1.02) / 2.04));
           const len = minLen + Math.pow(raw, 1.35) * (maxLen - minLen);
 
-          // Rotating 2-lobe Cyan-Blue-Purple sweep around the ring
           const colorMix = (Math.sin(angle * 2 - t * 1.15) + 1) * 0.5;
           ctx.strokeStyle = getWaveColor(colorMix);
 
