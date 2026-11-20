@@ -1,0 +1,1141 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+  <title>شروط الخدمة — لحن ميوزك | Lahn Music Terms of Service</title>
+  <link rel="icon" type="image/jpeg" href="./IMG_20261120_214224_908.jpg" />
+  <link rel="apple-touch-icon" href="./IMG_20261120_214224_908.jpg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --cyan: #00E5C3;
+      --cyan-deep: #06B6D4;
+      --purple: #A855F7;
+      --purple-dark: #6D28D9;
+      --gradient: linear-gradient(135deg, var(--cyan) 0%, #38BDF8 45%, var(--purple) 100%);
+      --radius-lg: 24px;
+      --radius-md: 16px;
+      --transition: 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    [data-theme="dark"] {
+      --bg: #070B14;
+      --surface: rgba(17, 24, 39, 0.68);
+      --surface-strong: rgba(20, 28, 46, 0.85);
+      --border: rgba(255, 255, 255, 0.11);
+      --border-glow: rgba(0, 229, 195, 0.28);
+      --text: #F8FAFC;
+      --text-muted: #CBD5E1;
+      --pill-bg: rgba(0, 229, 195, 0.12);
+      --pill-text: #5EEAD4;
+      --shadow: 0 20px 50px rgba(0, 0, 0, 0.45);
+      --orb-1: rgba(0, 229, 195, 0.24);
+      --orb-2: rgba(168, 85, 247, 0.28);
+      --orb-3: rgba(56, 189, 248, 0.18);
+      --icon-ring-bg: rgba(255, 255, 255, 0.16);
+      --icon-halo: radial-gradient(circle, rgba(0, 229, 195, 0.26) 0%, rgba(168, 85, 247, 0.22) 55%, transparent 74%);
+    }
+
+    [data-theme="light"] {
+      --bg: #F3F8FA;
+      --surface: rgba(255, 255, 255, 0.78);
+      --surface-strong: rgba(255, 255, 255, 0.94);
+      --border: rgba(15, 23, 42, 0.08);
+      --border-glow: rgba(109, 40, 217, 0.22);
+      --text: #0F172A;
+      --text-muted: #1E293B;
+      --pill-bg: rgba(0, 229, 195, 0.16);
+      --pill-text: #0F766E;
+      --shadow: 0 14px 36px rgba(15, 23, 42, 0.08);
+      --orb-1: rgba(0, 229, 195, 0.28);
+      --orb-2: rgba(168, 85, 247, 0.22);
+      --orb-3: rgba(56, 189, 248, 0.2);
+      --icon-ring-bg: rgba(255, 255, 255, 0.95);
+      --icon-halo: radial-gradient(circle, rgba(0, 229, 195, 0.22) 0%, rgba(168, 85, 247, 0.18) 55%, transparent 74%);
+    }
+
+    /* Native App Feel: No Selection, No Tap Highlight, No Dragging */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+      -webkit-touch-callout: none;
+      -webkit-tap-highlight-color: transparent;
+      tap-highlight-color: transparent;
+    }
+
+    /* Allow Selection & Native Copy ONLY for Email & Telegram Handle */
+    .copyable {
+      -webkit-user-select: text !important;
+      -moz-user-select: text !important;
+      -ms-user-select: text !important;
+      user-select: text !important;
+      -webkit-touch-callout: default !important;
+      cursor: text;
+      color: var(--text);
+      font-weight: 700;
+      padding: 2px 8px;
+      border-radius: 8px;
+      background: var(--pill-bg);
+      border: 1px solid var(--border-glow);
+      display: inline-block;
+      line-height: 1.5;
+    }
+
+    a, button, img {
+      outline: none;
+      -webkit-user-drag: none;
+      user-drag: none;
+    }
+
+    a:focus, button:focus {
+      outline: none;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      touch-action: pan-y;
+      overscroll-behavior-y: none;
+      -webkit-text-size-adjust: 100%;
+    }
+
+    body {
+      font-family: 'Cairo', 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.85;
+      min-height: 100vh;
+      overflow-x: hidden;
+      touch-action: pan-y;
+      overscroll-behavior-y: none;
+      transition: background-color var(--transition), color var(--transition);
+    }
+
+    html[dir="ltr"] body {
+      font-family: 'Plus Jakarta Sans', 'Cairo', system-ui, -apple-system, sans-serif;
+    }
+
+    /* Ambient Glowing Orbs (Lahn Music Signature Backdrop) */
+    .ambient-bg {
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      overflow: hidden;
+      pointer-events: none;
+    }
+
+    .orb {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(85px);
+      animation: drift 16s ease-in-out infinite alternate;
+    }
+
+    .orb-1 {
+      width: 420px;
+      height: 420px;
+      background: var(--orb-1);
+      top: -120px;
+      right: -100px;
+    }
+
+    .orb-2 {
+      width: 460px;
+      height: 460px;
+      background: var(--orb-2);
+      bottom: -140px;
+      left: -120px;
+      animation-delay: -6s;
+    }
+
+    .orb-3 {
+      width: 320px;
+      height: 320px;
+      background: var(--orb-3);
+      top: 42%;
+      left: 50%;
+      transform: translateX(-50%);
+      animation-delay: -11s;
+    }
+
+    @keyframes drift {
+      0% { transform: translate(0, 0) scale(1); }
+      100% { transform: translate(28px, 34px) scale(1.09); }
+    }
+
+    /* Top Floating Bar */
+    .topbar {
+      position: sticky;
+      top: 14px;
+      z-index: 50;
+      max-width: 880px;
+      margin: 14px auto 0;
+      padding: 0 16px;
+    }
+
+    .topbar-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 10px 16px;
+      background: var(--surface);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      box-shadow: var(--shadow);
+    }
+
+    .brand-mini {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 800;
+      font-size: 1rem;
+      letter-spacing: -0.01em;
+    }
+
+    .brand-dot {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 1.5px solid rgba(0, 229, 195, 0.45);
+      box-shadow: -3px 0 12px rgba(0, 229, 195, 0.35), 3px 0 12px rgba(168, 85, 247, 0.35);
+      flex-shrink: 0;
+      background: var(--gradient);
+    }
+
+    .brand-dot img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      pointer-events: none;
+    }
+
+    .controls {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .ctrl-btn {
+      border: 1px solid var(--border);
+      background: var(--surface-strong);
+      color: var(--text);
+      font-family: inherit;
+      font-weight: 700;
+      font-size: 0.85rem;
+      padding: 7px 14px;
+      border-radius: 999px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: transform 0.18s ease, border-color var(--transition), background var(--transition);
+    }
+
+    .ctrl-btn:hover {
+      border-color: var(--purple);
+    }
+
+    .ctrl-btn:active {
+      transform: scale(0.94);
+    }
+
+    /* Main Container */
+    .container {
+      max-width: 880px;
+      margin: 0 auto;
+      padding: 36px 18px 64px;
+    }
+
+    /* Hero Section with Native App 360 Equalizer Emblem */
+    .hero {
+      text-align: center;
+      margin-bottom: 36px;
+    }
+
+    .emblem-wrap {
+      position: relative;
+      width: 196px;
+      height: 196px;
+      margin: 0 auto 22px;
+      display: grid;
+      place-items: center;
+    }
+
+    .emblem-halo {
+      position: absolute;
+      width: 136px;
+      height: 136px;
+      border-radius: 50%;
+      background: var(--icon-halo);
+      filter: blur(14px);
+      pointer-events: none;
+      animation: pulseHalo 3s ease-in-out infinite alternate;
+    }
+
+    @keyframes pulseHalo {
+      0% { transform: scale(0.94); opacity: 0.78; }
+      100% { transform: scale(1.06); opacity: 1; }
+    }
+
+    .emblem-canvas {
+      position: absolute;
+      inset: 0;
+      width: 196px;
+      height: 196px;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .emblem-core {
+      width: 96px;
+      height: 96px;
+      border-radius: 50%;
+      padding: 3px;
+      background: var(--icon-ring-bg);
+      box-shadow:
+        -6px 0 22px rgba(0, 229, 195, 0.28),
+        6px 0 22px rgba(168, 85, 247, 0.30),
+        0 8px 20px rgba(0, 0, 0, 0.14);
+      position: relative;
+      z-index: 2;
+      overflow: hidden;
+    }
+
+    .emblem-core img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 50%;
+      display: block;
+      pointer-events: none;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 16px;
+      border-radius: 999px;
+      background: var(--pill-bg);
+      color: var(--pill-text);
+      font-size: 0.85rem;
+      font-weight: 700;
+      border: 1px solid var(--border-glow);
+      margin-bottom: 14px;
+    }
+
+    .hero h1 {
+      font-size: clamp(1.85rem, 4.5vw, 2.65rem);
+      font-weight: 800;
+      line-height: 1.3;
+      margin-bottom: 10px;
+      background: var(--gradient);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .hero p {
+      color: var(--text-muted);
+      font-size: 1rem;
+      max-width: 620px;
+      margin: 0 auto 14px;
+    }
+
+    .meta-row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 14px;
+    }
+
+    .meta-chip {
+      font-size: 0.82rem;
+      font-weight: 600;
+      padding: 6px 14px;
+      border-radius: 999px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      color: var(--text-muted);
+    }
+
+    /* Highlights Grid */
+    .highlights {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 14px;
+      margin-bottom: 26px;
+    }
+
+    .highlight-card {
+      background: var(--surface);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 18px;
+      box-shadow: var(--shadow);
+      transition: transform var(--transition), border-color var(--transition);
+    }
+
+    .highlight-card:hover {
+      transform: translateY(-3px);
+      border-color: var(--border-glow);
+    }
+
+    .highlight-icon {
+      width: 42px;
+      height: 42px;
+      border-radius: 12px;
+      background: var(--pill-bg);
+      color: var(--cyan-deep);
+      display: grid;
+      place-items: center;
+      margin-bottom: 10px;
+      font-size: 1.25rem;
+    }
+
+    .highlight-card h3 {
+      font-size: 0.98rem;
+      font-weight: 800;
+      margin-bottom: 4px;
+    }
+
+    .highlight-card p {
+      font-size: 0.87rem;
+      color: var(--text-muted);
+      line-height: 1.65;
+    }
+
+    /* Glass Policy Cards */
+    .policy-card {
+      background: var(--surface);
+      backdrop-filter: blur(22px);
+      -webkit-backdrop-filter: blur(22px);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 26px 24px;
+      margin-bottom: 18px;
+      box-shadow: var(--shadow);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .policy-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      inset-inline-start: 0;
+      width: 4px;
+      height: 100%;
+      background: var(--gradient);
+      opacity: 0.85;
+    }
+
+    .section-head {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 14px;
+    }
+
+    .section-num {
+      width: 34px;
+      height: 34px;
+      border-radius: 11px;
+      background: var(--gradient);
+      color: #070B14;
+      font-weight: 800;
+      font-size: 0.92rem;
+      display: grid;
+      place-items: center;
+      flex-shrink: 0;
+    }
+
+    .policy-card h2 {
+      font-size: 1.2rem;
+      font-weight: 800;
+    }
+
+    .policy-card p {
+      color: var(--text-muted);
+      margin-bottom: 12px;
+      font-size: 0.96rem;
+    }
+
+    .policy-card p:last-child {
+      margin-bottom: 0;
+    }
+
+    .policy-list {
+      list-style: none;
+      display: grid;
+      gap: 10px;
+      margin-top: 8px;
+    }
+
+    .policy-list li {
+      position: relative;
+      padding-inline-start: 22px;
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
+
+    .policy-list li::before {
+      content: "";
+      position: absolute;
+      inset-inline-start: 0;
+      top: 11px;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--purple-dark);
+      box-shadow: 0 0 10px var(--purple);
+    }
+
+    .policy-list strong {
+      color: var(--text);
+    }
+
+    .inline-link {
+      color: var(--cyan-deep);
+      font-weight: 700;
+      text-decoration: none;
+      border-bottom: 1px dashed var(--cyan-deep);
+    }
+
+    .inline-link:hover {
+      color: var(--purple);
+      border-bottom-color: var(--purple);
+    }
+
+    /* Contact CTA */
+    .contact-box {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin-top: 14px;
+      padding: 18px;
+      border-radius: var(--radius-md);
+      background: var(--surface-strong);
+      border: 1px solid var(--border-glow);
+    }
+
+    .contact-details {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .contact-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 8px;
+      color: var(--text-muted);
+      font-size: 0.92rem;
+    }
+
+    .copy-mini-btn {
+      border: 1px solid var(--border);
+      background: var(--surface);
+      color: var(--text);
+      border-radius: 8px;
+      padding: 4px 8px;
+      font-family: inherit;
+      font-size: 0.78rem;
+      font-weight: 700;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      transition: transform 0.15s ease, border-color var(--transition);
+    }
+
+    .copy-mini-btn:hover {
+      border-color: var(--cyan);
+    }
+
+    .copy-mini-btn:active {
+      transform: scale(0.93);
+    }
+
+    .cta-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .cta-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      padding: 11px 20px;
+      border-radius: 999px;
+      background: var(--gradient);
+      color: #070B14;
+      font-weight: 800;
+      font-size: 0.9rem;
+      text-decoration: none;
+      box-shadow: 0 8px 24px rgba(0, 229, 195, 0.28);
+      transition: transform 0.18s ease, box-shadow var(--transition);
+    }
+
+    .cta-btn:hover {
+      box-shadow: 0 12px 28px rgba(168, 85, 247, 0.36);
+    }
+
+    .cta-btn:active {
+      transform: scale(0.95);
+    }
+
+    .cta-btn-secondary {
+      background: var(--surface);
+      color: var(--text);
+      border: 1px solid var(--border-glow);
+      box-shadow: none;
+    }
+
+    .cta-btn-secondary:hover {
+      border-color: var(--purple);
+      box-shadow: 0 8px 20px rgba(168, 85, 247, 0.2);
+    }
+
+    .cta-btn svg {
+      width: 18px;
+      height: 18px;
+      flex-shrink: 0;
+    }
+
+    /* Copy Toast */
+    .copy-toast {
+      position: fixed;
+      bottom: 24px;
+      left: 50%;
+      transform: translateX(-50%) translateY(20px);
+      background: var(--surface-strong);
+      color: var(--text);
+      border: 1px solid var(--border-glow);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      padding: 10px 20px;
+      border-radius: 999px;
+      font-size: 0.88rem;
+      font-weight: 700;
+      box-shadow: var(--shadow);
+      opacity: 0;
+      pointer-events: none;
+      z-index: 100;
+      transition: opacity 0.25s ease, transform 0.25s ease;
+    }
+
+    .copy-toast.show {
+      opacity: 1;
+      transform: translateX(-50%) translateY(0);
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      margin-top: 34px;
+      padding-top: 20px;
+      border-top: 1px solid var(--border);
+      color: var(--text-muted);
+      font-size: 0.88rem;
+    }
+
+    .lang-en { display: none; }
+    html[lang="en"] .lang-ar { display: none; }
+    html[lang="en"] .lang-en { display: block; }
+    html[lang="en"] span.lang-en,
+    html[lang="en"] a.lang-en { display: inline-flex; }
+    html[lang="ar"] span.lang-ar,
+    html[lang="ar"] a.lang-ar { display: inline-flex; }
+
+    @media (max-width: 600px) {
+      .policy-card { padding: 20px 18px; }
+      .topbar-inner { padding: 8px 12px; }
+      .brand-mini span { font-size: 0.92rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="ambient-bg" aria-hidden="true">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+  </div>
+
+  <!-- Top Navigation -->
+  <header class="topbar">
+    <div class="topbar-inner">
+      <div class="brand-mini">
+        <div class="brand-dot" aria-hidden="true">
+          <img src="./IMG_20261120_214224_908.jpg" alt="لحن ميوزك" draggable="false" />
+        </div>
+        <span class="lang-ar">لحن ميوزك</span>
+        <span class="lang-en">Lahn Music</span>
+      </div>
+      <div class="controls">
+        <button class="ctrl-btn" id="langToggle" type="button" aria-label="Switch Language">
+          <span class="lang-ar">English</span>
+          <span class="lang-en">العربية</span>
+        </button>
+        <button class="ctrl-btn" id="themeToggle" type="button" aria-label="Toggle Theme">
+          <span id="themeIcon">☀️</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- Hero -->
+    <section class="hero">
+      <div class="emblem-wrap" aria-hidden="true">
+        <div class="emblem-halo"></div>
+        <canvas id="waveCanvas" class="emblem-canvas" width="196" height="196"></canvas>
+        <div class="emblem-core">
+          <img src="./IMG_20261120_214224_908.jpg" alt="Lahn Music Icon" draggable="false" />
+        </div>
+      </div>
+
+      <div class="badge">
+        <span class="lang-ar">📜 اتفاقية الاستخدام الرسمية</span>
+        <span class="lang-en">📜 Official Terms of Use</span>
+      </div>
+
+      <h1 class="lang-ar">شروط الخدمة لتطبيق لحن ميوزك</h1>
+      <h1 class="lang-en">Lahn Music Terms of Service</h1>
+
+      <p class="lang-ar">
+        باستخدامك لتطبيق <strong>لحن ميوزك (Lahn Music)</strong> المطوّر من قِبل <strong>Hassan Studio 1</strong>، فإنك توافق على هذه الشروط البسيطة والواضحة التي تحفظ حقوقك وحقوق المطوّر وتضمن تجربة استماع آمنة وموثوقة.
+      </p>
+      <p class="lang-en">
+        By downloading or using <strong>Lahn Music</strong>, developed by <strong>Hassan Studio 1</strong>, you agree to these clear and straightforward Terms of Service designed to protect both your experience and our intellectual property.
+      </p>
+
+      <div class="meta-row">
+        <span class="meta-chip lang-ar">آخر تحديث: 21 نوفمبر 2026</span>
+        <span class="meta-chip lang-en">Last Updated: November 21, 2026</span>
+        <span class="meta-chip">com.hassanstudio.lahn.music</span>
+      </div>
+    </section>
+
+    <!-- Quick Highlights -->
+    <section class="highlights">
+      <div class="highlight-card">
+        <div class="highlight-icon">🎧</div>
+        <h3 class="lang-ar">استخدام شخصي مجاني</h3>
+        <h3 class="lang-en">Free Personal Use</h3>
+        <p class="lang-ar">مرخّص لك استخدام التطبيق مجاناً وبشكل شخصي لتشغيل ملفاتك الصوتية المحلية على جهازك.</p>
+        <p class="lang-en">Licensed for free personal, non-commercial playback of your local audio files on your device.</p>
+      </div>
+      <div class="highlight-card">
+        <div class="highlight-icon">©️</div>
+        <h3 class="lang-ar">حماية الملكية الفكرية</h3>
+        <h3 class="lang-en">Protected IP &amp; Design</h3>
+        <p class="lang-ar">التصميم والشعار والكود البرمجي ملك حصري لـ Hassan Studio 1، ويُمنع تعديل التطبيق أو تفكيكه.</p>
+        <p class="lang-en">The design, branding, and code belong exclusively to Hassan Studio 1; tampering or reverse engineering is prohibited.</p>
+      </div>
+      <div class="highlight-card">
+        <div class="highlight-icon">📁</div>
+        <h3 class="lang-ar">مسؤولية ملفاتك الصوتية</h3>
+        <h3 class="lang-en">Local Content Responsibility</h3>
+        <p class="lang-ar">التطبيق مشغّل محلي فقط ولا يوفّر تحميل أغاني؛ أنت وحدك المسؤول عن مصادر ملفاتك المخزّنة.</p>
+        <p class="lang-en">Lahn Music is strictly an offline local player and does not host or download media; you are responsible for your files.</p>
+      </div>
+    </section>
+
+    <!-- ARABIC CONTENT -->
+    <div class="lang-ar">
+      <article class="policy-card">
+        <div class="section-head">
+          <div class="section-num">1</div>
+          <h2>قبول الشروط ونطاق الترخيص</h2>
+        </div>
+        <p>تشكّل شروط الخدمة هذه اتفاقية قانونية بينك وبين <strong>Hassan Studio 1</strong> بخصوص استخدامك لتطبيق <strong>لحن ميوزك</strong>:</p>
+        <ul class="policy-list">
+          <li><strong>الموافقة على الشروط:</strong> تثبيتك للتطبيق أو استمرارك في استخدامه يعني موافقتك الكاملة على هذه الشروط، وكذلك على <a class="inline-link" href="./">سياسة الخصوصية</a> الخاصة بالتطبيق.</li>
+          <li><strong>الترخيص الممنوح لك:</strong> نمنحك ترخيصاً شخصياً، محدوداً، غير حصري، وغير قابل للتحويل لتثبيت واستخدام التطبيق مجاناً لأغراض شخصية وغير تجارية على أجهزتك التي تعمل بنظام أندرويد.</li>
+          <li><strong>المصدر الرسمي:</strong> يُنصح دائماً بتنزيل التطبيق وتحديثاته حصرياً من متجر <strong>Google Play</strong> لضمان سلامة وأمان النسخة.</li>
+        </ul>
+      </article>
+
+      <article class="policy-card">
+        <div class="section-head">
+          <div class="section-num">2</div>
+          <h2>حقوق الملكية الفكرية والاستخدام الممنوع</h2>
+        </div>
+        <p>جميع عناصر تطبيق <strong>لحن ميوزك</strong>—بما في ذلك الاسم، الشعار، الواجهة الزجاجية، الرسوم والموجات المتحركة، والأكواد البرمجية—هي ملكية فكرية حصرية لـ <strong>Hassan Studio 1</strong>. وبموجب هذه الشروط، يُحظر عليك القيام بما يلي:</p>
+        <ul class="policy-list">
+          <li><strong>النسخ أو إعادة النشر:</strong> نسخ التطبيق أو تعديل ملف التثبيت (APK/AAB) أو إعادة توزيعه أو رفعه على متاجر أو مواقع أخرى دون إذن كتابي مسبق.</li>
+          <li><strong>الهندسة العكسية:</strong> محاولة تفكيك الكود البرمجي (Decompile / Reverse Engineering) أو استخراج موارده أو تجاوز آليات الحماية الخاصة به.</li>
+          <li><strong>الاستغلال التجاري أو الضار:</strong> استخدام اسم التطبيق أو شعاره بشكل مضلّل، أو إساءة استخدام خدماته التقنية أو قواعد بياناته بأي شكل غير مشروع.</li>
+        </ul>
+      </article>
+
+      <article class="policy-card">
+        <div class="section-head">
+          <div class="section-num">3</div>
+          <h2>مسؤولية الملفات الصوتية وحقوق النشر</h2>
+        </div>
+        <p>يعمل تطبيق <strong>لحن ميوزك</strong> حصرياً كمشغّل موسيقى محلي للملفات المحفوظة مسبقاً على ذاكرة جهازك:</p>
+        <ul class="policy-list">
+          <li><strong>عدم استضافة أو تحميل المحتوى:</strong> لا يوفّر التطبيق أي خدمة بث عبر الإنترنت أو تنزيل للأغاني، ولا يملك أو يراقب الملفات الصوتية المخزّنة على جهازك.</li>
+          <li><strong>مسؤولية المستخدم:</strong> تقع عليك وحدك المسؤولية القانونية الكاملة عن مصادر الملفات الصوتية التي تقوم بتشغيلها عبر التطبيق، وعن احترام حقوق النشر والملكية الفكرية الخاصة بأصحابها.</li>
+        </ul>
+      </article>
+
+      <article class="policy-card">
+        <div class="section-head">
+          <div class="section-num">4</div>
+          <h2>التحديثات والخدمات الخارجية</h2>
+        </div>
+        <ul class="policy-list">
+          <li><strong>تطوير التطبيق وتحديثاته:</strong> نحتفظ بحقنا في تحسين التطبيق أو إضافة ميزات جديدة أو تعديل بعض الخصائص وإصدار تحديثات دورية عبر متجر Google Play (بما في ذلك التحديثات داخل التطبيق In-App Updates) لضمان أفضل أداء وأمان.</li>
+          <li><strong>خدمات Google المرتبطة:</strong> يعتمد التطبيق على خدمات رسمية مثل <strong>Google Play Services</strong> و <strong>Firebase</strong> للتحديثات والإحصائيات التقنية المجهولة وفقاً لشروط Google وسياسة الخصوصية الخاصة بنا.</li>
+          <li><strong>حق التوقف أو الإنهاء:</strong> في حال مخالفة هذه الشروط أو إساءة استخدام التطبيق، ينتهي حقك في استخدامه، كما يحتفظ المطوّر بحق إيقاف دعم الإصدارات القديمة عند الضرورة التقنية.</li>
+        </ul>
+      </article>
+
+      <article class="policy-card">
+        <div class="section-head">
+          <div class="section-num">5</div>
+          <h2>إخلاء المسؤولية وسلامة الاستماع</h2>
+        </div>
+        <p>يُقدَّم تطبيق <strong>لحن ميوزك</strong> «كما هو» (As Is) وحسب التوفّر، مع بذلنا قصارى جهدنا لتقديم تجربة مستقرة وخالية من الأخطاء:</p>
+        <ul class="policy-list">
+          <li><strong>حدود المسؤولية:</strong> لا يتحمّل <strong>Hassan Studio 1</strong> أي مسؤولية عن أي أعطال ناتجة عن نظام تشغيل جهازك، أو تلف أو فقدان ملفاتك المحلية المخزّنة على الجهاز، أو استخدام نسخ معدّلة وغير رسمية من التطبيق.</li>
+          <li><strong>سلامة السمع والاستخدام الآمن:</strong> تقع على عاتقك مسؤولية ضبط مستوى الصوت بشكل آمن لحماية سمعك، وتجنّب استخدام التطبيق بطريقة تشتّت انتباهك أثناء القيادة أو الأنشطة التي تتطلب تركيزاً كاملاً.</li>
+        </ul>
+      </article>
+
+      <article class="policy-card">
+        <div class="section-head">
+          <div class="section-num">6</div>
+          <h2>تعديل الشروط والتواصل معنا</h2>
+        </div>
+        <p>قد نقوم بتحديث شروط الخدمة هذه من وقت لآخر لتواكب الميزات الجديدة أو المتطلبات التنظيمية، ويُعدّ استمرارك في استخدام التطبيق بعد نشر التحديثات موافقةً عليها. لأي استفسار أو ملاحظة، يسعدنا تواصلك معنا مباشرة:</p>
+        <div class="contact-box">
+          <div class="contact-details">
+            <strong>Hassan Studio 1</strong>
+            <div class="contact-row">
+              <span>البريد الإلكتروني:</span>
+              <span class="copyable" dir="ltr">Play98h@gmail.com</span>
+              <button type="button" class="copy-mini-btn" data-copy="Play98h@gmail.com" data-msg="تم نسخ البريد الإلكتروني">نسخ</button>
+            </div>
+            <div class="contact-row">
+              <span>تيليجرام:</span>
+              <span class="copyable" dir="ltr">@Hassan_Official_1</span>
+              <button type="button" class="copy-mini-btn" data-copy="@Hassan_Official_1" data-msg="تم نسخ معرّف تيليجرام">نسخ</button>
+            </div>
+          </div>
+          <div class="cta-group">
+            <a class="cta-btn" href="mailto:Play98h@gmail.com">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect x="2" y="4" width="20" height="16" rx="3"/>
+                <path d="m22 7-10 6L2 7"/>
+              </svg>
+              راسلنا عبر البريد
+            </a>
+            <a class="cta-btn cta-btn-secondary" href="https://t.me/Hassan_Official_1" target="_blank" rel="noopener noreferrer">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/>
+              </svg>
+              تواصل عبر تيليجرام
+            </a>
+          </div>
+        </div>
+      </article>
+    </div>
+
+    <!-- ENGLISH CONTENT -->
+    <div class="lang-en">
+      <article class="policy-card">
+        <div class="section-head">
+          <div class="section-num">1</div>
+          <h2>Acceptance of Terms &amp; License Scope</h2>
+        </div>
+        <p>These Terms of Service form a binding agreement between you and <strong>Hassan Studio 1</strong> governing your use of <strong>Lahn Music</strong>:</p>
+        <ul class="policy-list">
+          <li><strong>Agreement:</strong> By installing or using the app, you agree to be bound by these Terms as well as our <a class="inline-link" href="./">Privacy Policy</a>.</li>
+          <li><strong>Personal License:</strong> We grant you a free, personal, limited, non-exclusive, non-transferable license to install and use Lahn Music for non-commercial audio playback on your Android devices.</li>
+          <li><strong>Official Distribution:</strong> For your safety and integrity, always download and update Lahn Music exclusively from the official <strong>Google Play Store</strong>.</li>
+        </ul>
+      </article>
+
+      <article class="policy-card">
+        <div class="section-head">
+          <div class="section-num">2</div>
+          <h2>Intellectual Property &amp; Prohibited Conduct</h2>
+        </div>
+        <p>All elements of <strong>Lahn Music</strong>—including its name, logo, glassmorphic interface, custom wave animations, visual assets, and source code—are the exclusive intellectual property of <strong>Hassan Studio 1</strong>. You agree NOT to:</p>
+        <ul class="policy-list">
+          <li><strong>Copy or Redistribute:</strong> Clone, modify the installation package (APK/AAB), repackage, or redistribute the app on third-party stores or websites without prior written permission.</li>
+          <li><strong>Reverse Engineer:</strong> Decompile, disassemble, reverse engineer the source code, extract app assets, or attempt to bypass any security mechanisms.</li>
+          <li><strong>Misuse or Abuse:</strong> Use the Lahn Music brand misleadingly, or abuse any technical infrastructure or backend services associated with the app.</li>
+        </ul>
+      </article>
+
+      <article class="policy-card">
+        <div class="section-head">
+          <div class="section-num">3</div>
+          <h2>User Audio Files &amp; Copyright Responsibility</h2>
+        </div>
+        <p><strong>Lahn Music</strong> operates strictly as an offline local music player for audio files already stored on your device:</p>
+        <ul class="policy-list">
+          <li><strong>No Hosting or Downloading:</strong> The app does not provide music streaming, audio downloads, or cloud hosting, and has no control over or access to the origins of your stored files.</li>
+          <li><strong>Your Responsibility:</strong> You are solely responsible for the legality, ownership, and copyright compliance of all audio files stored on your device and played through Lahn Music.</li>
+        </ul>
+      </article>
+
+      <article class="policy-card">
+        <div class="section-head">
+          <div class="section-num">4</div>
+          <h2>Updates &amp; Third-Party Services</h2>
+        </div>
+        <ul class="policy-list">
+          <li><strong>App Improvements &amp; Updates:</strong> We reserve the right to enhance, modify, or discontinue features and release periodic updates via Google Play (including official Google Play In-App Updates) to maintain performance and security.</li>
+          <li><strong>Google Services:</strong> The app integrates official services such as <strong>Google Play Services</strong> and <strong>Firebase</strong> for updates and anonymous technical analytics, subject to Google's terms and our Privacy Policy.</li>
+          <li><strong>Termination:</strong> Your license to use the app terminates automatically if you violate these Terms. We may also discontinue support for outdated versions when technically necessary.</li>
+        </ul>
+      </article>
+
+      <article class="policy-card">
+        <div class="section-head">
+          <div class="section-num">5</div>
+          <h2>Disclaimer of Liability &amp; Safe Listening</h2>
+        </div>
+        <p><strong>Lahn Music</strong> is provided on an "as is" and "as available" basis while we strive to deliver a smooth, reliable listening experience:</p>
+        <ul class="policy-list">
+          <li><strong>Limitation of Liability:</strong> To the maximum extent permitted by law, <strong>Hassan Studio 1</strong> is not liable for device OS issues, loss or corruption of your local files, indirect damages, or issues caused by modified/unofficial copies of the app.</li>
+          <li><strong>Hearing &amp; Road Safety:</strong> You are responsible for maintaining safe audio volume levels to protect your hearing and avoiding distracted app use while driving or performing safety-critical tasks.</li>
+        </ul>
+      </article>
+
+      <article class="policy-card">
+        <div class="section-head">
+          <div class="section-num">6</div>
+          <h2>Changes to Terms &amp; Contact Us</h2>
+        </div>
+        <p>We may update these Terms of Service from time to time to reflect new features or legal requirements. Continuing to use the app after changes are posted constitutes acceptance of the updated Terms. If you have any questions, feel free to contact us:</p>
+        <div class="contact-box">
+          <div class="contact-details">
+            <strong>Hassan Studio 1</strong>
+            <div class="contact-row">
+              <span>Email:</span>
+              <span class="copyable" dir="ltr">Play98h@gmail.com</span>
+              <button type="button" class="copy-mini-btn" data-copy="Play98h@gmail.com" data-msg="Email copied">Copy</button>
+            </div>
+            <div class="contact-row">
+              <span>Telegram:</span>
+              <span class="copyable" dir="ltr">@Hassan_Official_1</span>
+              <button type="button" class="copy-mini-btn" data-copy="@Hassan_Official_1" data-msg="Telegram username copied">Copy</button>
+            </div>
+          </div>
+          <div class="cta-group">
+            <a class="cta-btn" href="mailto:Play98h@gmail.com">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect x="2" y="4" width="20" height="16" rx="3"/>
+                <path d="m22 7-10 6L2 7"/>
+              </svg>
+              Email Support
+            </a>
+            <a class="cta-btn cta-btn-secondary" href="https://t.me/Hassan_Official_1" target="_blank" rel="noopener noreferrer">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/>
+              </svg>
+              Contact on Telegram
+            </a>
+          </div>
+        </div>
+      </article>
+    </div>
+
+    <footer>
+      <p class="lang-ar">© 2026 Hassan Studio 1 — جميع الحقوق محفوظة لتطبيق لحن ميوزك</p>
+      <p class="lang-en">© 2026 Hassan Studio 1 — All rights reserved for Lahn Music</p>
+    </footer>
+  </main>
+
+  <div id="copyToast" class="copy-toast" role="status" aria-live="polite"></div>
+
+  <script>
+    const html = document.documentElement;
+    const langToggle = document.getElementById('langToggle');
+    const themeToggle = document.getElementById('themeToggle');
+    const themeIcon = document.getElementById('themeIcon');
+    const copyToast = document.getElementById('copyToast');
+    let toastTimer = null;
+
+    // Sync initial theme with device preference
+    const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+    setTheme(prefersDark ? 'dark' : 'light');
+
+    function setTheme(theme) {
+      html.setAttribute('data-theme', theme);
+      themeIcon.textContent = theme === 'dark' ? '☀️' : '🌙';
+    }
+
+    themeToggle.addEventListener('click', () => {
+      const next = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      setTheme(next);
+    });
+
+    langToggle.addEventListener('click', () => {
+      const isAr = html.getAttribute('lang') === 'ar';
+      html.setAttribute('lang', isAr ? 'en' : 'ar');
+      html.setAttribute('dir', isAr ? 'ltr' : 'rtl');
+    });
+
+    // Helper: check if target is inside a .copyable element
+    function isInsideCopyable(target) {
+      const el = target && target.nodeType === 3 ? target.parentElement : target;
+      return Boolean(el && el.closest && el.closest('.copyable'));
+    }
+
+    // Native App Protections: Block selection/menu everywhere EXCEPT .copyable, and block zoom everywhere
+    document.addEventListener('contextmenu', (e) => {
+      if (isInsideCopyable(e.target)) return;
+      e.preventDefault();
+    });
+    document.addEventListener('selectstart', (e) => {
+      if (isInsideCopyable(e.target)) return;
+      e.preventDefault();
+    });
+    document.addEventListener('dragstart', (e) => e.preventDefault());
+    document.addEventListener('gesturestart', (e) => e.preventDefault(), { passive: false });
+    document.addEventListener('gesturechange', (e) => e.preventDefault(), { passive: false });
+    document.addEventListener('touchmove', (e) => {
+      if (e.touches.length > 1) e.preventDefault();
+    }, { passive: false });
+    document.addEventListener('wheel', (e) => {
+      if (e.ctrlKey) e.preventDefault();
+    }, { passive: false });
+    document.addEventListener('keydown', (e) => {
+      if ((e.ctrlKey || e.metaKey) && ['+', '-', '=', '0'].includes(e.key)) {
+        e.preventDefault();
+      }
+    });
+
+    // Quick Copy Buttons with Toast Feedback
+    function showToast(msg) {
+      copyToast.textContent = msg;
+      copyToast.classList.add('show');
+      clearTimeout(toastTimer);
+      toastTimer = setTimeout(() => copyToast.classList.remove('show'), 2000);
+    }
+
+    document.querySelectorAll('.copy-mini-btn').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const text = btn.getAttribute('data-copy');
+        const msg = btn.getAttribute('data-msg');
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(text).then(() => showToast(msg)).catch(() => fallbackCopy(text, msg));
+        } else {
+          fallbackCopy(text, msg);
+        }
+      });
+    });
+
+    function fallbackCopy(text, msg) {
+      const ta = document.createElement('textarea');
+      ta.value = text;
+      ta.style.position = 'fixed';
+      ta.style.opacity = '0';
+      document.body.appendChild(ta);
+      ta.focus();
+      ta.select();
+      try {
+        document.execCommand('copy');
+        showToast(msg);
+      } catch (_) {}
+      document.body.removeChild(ta);
+    }
+
+    // 360-Degree Live Equalizer Ring (Matched to Lahn Music App About Screen)
+    (function initWaveRing() {
+      const canvas = document.getElementById('waveCanvas');
+      if (!canvas) return;
+      const ctx = canvas.getContext('2d');
+      const size = 196;
+      const dpr = Math.min(window.devicePixelRatio || 1, 3);
+      canvas.width = size * dpr;
+      canvas.height = size * dpr;
+      ctx.scale(dpr, dpr);
+
+      const cx = size / 2;
+      const cy = size / 2;
+      const barCount = 48;
+      const innerRadius = 56;
+      const minLen = 6;
+      const maxLen = 25;
+
+      function getWaveColor(t) {
+        let r, g, b;
+        if (t < 0.5) {
+          const k = t * 2;
+          r = Math.round(0 + (56 - 0) * k);
+          g = Math.round(229 + (189 - 229) * k);
+          b = Math.round(195 + (248 - 195) * k);
+        } else {
+          const k = (t - 0.5) * 2;
+          r = Math.round(56 + (168 - 56) * k);
+          g = Math.round(189 + (85 - 189) * k);
+          b = Math.round(248 + (247 - 248) * k);
+        }
+        return `rgb(${r}, ${g}, ${b})`;
+      }
+
+      function draw(time) {
+        ctx.clearRect(0, 0, size, size);
+        const t = time * 0.0014;
+
+        ctx.lineWidth = 2.1;
+        ctx.lineCap = 'round';
+
+        for (let i = 0; i < barCount; i++) {
+          const angle = (i / barCount) * Math.PI * 2 - Math.PI / 2;
+
+          const w1 = Math.sin(angle * 4 - t * 2.5) * 0.36;
+          const w2 = Math.sin(angle * 7 + t * 3.4) * 0.30;
+          const w3 = Math.cos(angle * 11 - t * 4.3) * 0.22;
+          const w4 = Math.sin(i * 1.9 + t * 5.2) * 0.18;
+
+          const raw = Math.max(0, Math.min(1, (w1 + w2 + w3 + w4 + 1.02) / 2.04));
+          const len = minLen + Math.pow(raw, 1.35) * (maxLen - minLen);
+
+          const colorMix = (Math.sin(angle * 2 - t * 1.15) + 1) * 0.5;
+          ctx.strokeStyle = getWaveColor(colorMix);
+
+          const cos = Math.cos(angle);
+          const sin = Math.sin(angle);
+
+          ctx.beginPath();
+          ctx.moveTo(cx + cos * innerRadius, cy + sin * innerRadius);
+          ctx.lineTo(cx + cos * (innerRadius + len), cy + sin * (innerRadius + len));
+          ctx.stroke();
+        }
+
+        requestAnimationFrame(draw);
+      }
+
+      requestAnimationFrame(draw);
+    })();
+  </script>
+</body>
+</html>
